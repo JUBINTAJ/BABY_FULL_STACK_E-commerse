@@ -1,0 +1,349 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-12.jpg",
+      "price": "1000",
+      "rating": "4",
+      "title": "Extra Soft Touch Lamb Doll",
+      "category": "toys",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "2",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-11.jpg",
+      "price": 1033,
+      "rating": "4",
+      "title": " Twin Cute Bunny Set ",
+      "category": "dress",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "3",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-10.jpg",
+      "price": 1033,
+      "rating": 4.8,
+      "title": "Colorful Birdies on Orange Bandana",
+      "category": "dress",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "4",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-8.jpg",
+      "price": 1044,
+      "rating": 4.8,
+      "title": "Sunny Outdoor Picnic Set Yellow",
+      "category": "dress",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "5",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-7.jpg",
+      "price": 1200,
+      "rating": 4.8,
+      "title": "Teddy Bear Ready To Flight Doll",
+      "category": "toys",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "6",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-4.jpg",
+      "price": 1110,
+      "rating": 4.8,
+      "title": " ZooMate 3 Animal Set Toys",
+      "category": "toys",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "7",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-5.jpg",
+      "price": 1000,
+      "rating": 4.8,
+      "title": "Frosted White Plastic Bottle 400ml",
+      "category": "toys",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "8",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-3.jpg",
+      "price": "1030",
+      "rating": "4",
+      "title": "Cute Brown Sheep Sleeveless",
+      "category": "dress",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "9",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-2.jpg",
+      "price": 1000,
+      "rating": 4.8,
+      "title": "Long Sleeve Sweater Navy Blue",
+      "category": "dress",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "10",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-1.jpg",
+      "price": 1000,
+      "rating": 4.8,
+      "title": "Nutrikids Food Nutrition DHA+ Orange ",
+      "category": "dress",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "11",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-9.jpg",
+      "price": 1000,
+      "rating": 4.8,
+      "title": "White Comfort Maxx ",
+      "category": "food",
+      "quantity": 1,
+      "bestseller": true,
+      "count": 1
+    },
+    {
+      "id": "77fb",
+      "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-6.jpg",
+      "title": "VitCom Nutrition Fruits Flavor",
+      "price": "1000",
+      "rating": "5",
+      "category": "food"
+    }
+  ],
+  "user": [
+    {
+      "id": "1125",
+      "block": false
+    },
+    {
+      "id": "5d4a",
+      "name": "JUBIN TAJ",
+      "email": "jubintajj@gmail.com",
+      "password": "11111",
+      "cart": [
+        {
+          "id": "7",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-5.jpg",
+          "price": 10,
+          "rating": 4.8,
+          "title": "Frosted White Plastic Bottle 400ml",
+          "category": "toys",
+          "quantity": 2,
+          "bestseller": true,
+          "count": 1
+        },
+        {
+          "id": "77fb",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-6.jpg",
+          "title": "VitCom Nutrition Fruits Flavor",
+          "price": "1000",
+          "rating": "5",
+          "category": "food",
+          "quantity": 1
+        }
+      ],
+      "block": true
+    },
+    {
+      "id": "49e8",
+      "name": "anas",
+      "email": "anas@ghk",
+      "password": "11111",
+      "cart": [
+        {
+          "id": "10",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-1.jpg",
+          "price": 10,
+          "rating": 4.8,
+          "title": "Nutrikids Food Nutrition DHA+ Orange ",
+          "category": "dress",
+          "quantity": 2,
+          "bestseller": true,
+          "count": 1
+        },
+        {
+          "id": "8",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-3.jpg",
+          "price": 10,
+          "rating": 4.8,
+          "title": "Cute Brown Sheep Sleeveless",
+          "category": "dress",
+          "quantity": 8,
+          "bestseller": true,
+          "count": 1
+        },
+        {
+          "id": "2",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-11.jpg",
+          "price": 103,
+          "rating": 4.8,
+          "title": " Twin Cute Bunny Set Combo",
+          "category": "dress",
+          "quantity": 1,
+          "bestseller": true,
+          "count": 1
+        },
+        {
+          "id": "77fb",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-6.jpg",
+          "title": "VitCom Nutrition Fruits Flavor",
+          "price": "1000",
+          "rating": "5",
+          "category": "food",
+          "quantity": 2
+        },
+        {
+          "id": "3",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-10.jpg",
+          "price": 1033,
+          "rating": 4.8,
+          "title": "Colorful Birdies on Orange Bandana",
+          "category": "dress",
+          "quantity": 1,
+          "bestseller": true,
+          "count": 1
+        }
+      ],
+      "block": false
+    },
+    {
+      "id": "34e4",
+      "name": " ssssssssssss",
+      "email": "badhush@gmail.com",
+      "password": "11111",
+      "cart": [
+        {
+          "id": "2",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-11.jpg",
+          "price": 103,
+          "rating": 4.8,
+          "title": " Twin Cute Bunny Set Combo",
+          "category": "dress",
+          "quantity": 79,
+          "bestseller": true,
+          "count": 1
+        },
+        {
+          "id": "3",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-10.jpg",
+          "price": 1033,
+          "rating": 4.8,
+          "title": "Colorful Birdies on Orange Bandana",
+          "category": "dress",
+          "quantity": 92,
+          "bestseller": true,
+          "count": 1
+        },
+        {
+          "id": "4",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-8.jpg",
+          "price": 1044,
+          "rating": 4.8,
+          "title": "Sunny Outdoor Picnic Set Yellow",
+          "category": "dress",
+          "quantity": 85,
+          "bestseller": true,
+          "count": 1
+        },
+        {
+          "id": "8",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-3.jpg",
+          "price": 10,
+          "rating": 4.8,
+          "title": "Cute Brown Sheep Sleeveless",
+          "category": "dress",
+          "quantity": 5,
+          "bestseller": true,
+          "count": 1
+        }
+      ],
+      "block": true
+    },
+    {
+      "id": "65dd",
+      "name": "ijaz",
+      "email": "ijaz@gmail.com",
+      "password": "123456",
+      "cart": [
+        {
+          "id": "3",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-10.jpg",
+          "price": 1033,
+          "rating": 4.8,
+          "title": "Colorful Birdies on Orange Bandana",
+          "category": "dress",
+          "quantity": 3,
+          "bestseller": true,
+          "count": 1
+        }
+      ],
+      "block": false
+    },
+    {
+      "id": "2633",
+      "name": "JUBIN TAJ",
+      "email": "jubiiitaj@gmail.com",
+      "password": "11111",
+      "cart": [
+        {
+          "id": "4",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-8.jpg",
+          "price": 1044,
+          "rating": 4.8,
+          "title": "Sunny Outdoor Picnic Set Yellow",
+          "category": "dress",
+          "quantity": 1,
+          "bestseller": true,
+          "count": 1
+        },
+        {
+          "id": "7",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-5.jpg",
+          "price": 1000,
+          "rating": 4.8,
+          "title": "Frosted White Plastic Bottle 400ml",
+          "category": "toys",
+          "quantity": 1,
+          "bestseller": true,
+          "count": 1
+        },
+        {
+          "id": "9",
+          "img": "https://websitedemos.net/baby-store-04/wp-content/uploads/sites/750/2020/12/baby-store-product-img-2.jpg",
+          "price": 1000,
+          "rating": 4.8,
+          "title": "Long Sleeve Sweater Navy Blue",
+          "category": "dress",
+          "quantity": 1,
+          "bestseller": true,
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "admin": [
+    {
+      "id": "0469"
+    }
+  ]
+}
