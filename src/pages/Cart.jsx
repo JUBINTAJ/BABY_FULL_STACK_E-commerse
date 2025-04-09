@@ -144,7 +144,7 @@ const Cart = () => {
                 <p>{currency}{grandTotal}</p>
               </div>
               <div className="text-center mt-6">
-                <Link to={"/payment"}>
+                <Link to={"/payment"}  state={{ grandTotal,Cart }}>
                   <button className="bg-blue-600 rounded-xl text-white px-8 py-3 text-lg active:bg-blue-700 hover:bg-blue-500 transition">
                     Proceed to Payment
                   </button>

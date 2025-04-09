@@ -1,12 +1,13 @@
 import React from "react";
 import { X, Heart, ShoppingCart } from "lucide-react";
 import moment from "moment";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axios/intersptr";
 import { toast } from "react-toastify";
 
 const ProductModal = ({ product, onClose }) => {
   if (!product) return null;
+  const queryClient = useQueryClient();
 
   const addCart=useMutation({
     mutationFn:async({productId})=>{
@@ -15,6 +16,8 @@ const ProductModal = ({ product, onClose }) => {
     },
     onSuccess:()=>{
         toast.success('successfuly added cart')
+        queryClient.invalidateQueries({ queryKey: ["Cart"] });
+
     },onError:(error)=>{
         toast.error("error poyinookada",error)
     }
@@ -28,6 +31,8 @@ const ProductModal = ({ product, onClose }) => {
     },
     onSuccess:()=>{
         toast.success('successfuly added wishlist')
+        queryClient.invalidateQueries({ queryKey: ["Wishlist"] });
+
     },onError:(error)=>{
         toast.error("already added ",error)
     }

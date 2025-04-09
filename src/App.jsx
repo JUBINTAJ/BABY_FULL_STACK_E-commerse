@@ -16,7 +16,7 @@ import Shop from './pages/Shop'
 import Adminproduct from './admin/Adminproduct'
 import Adminuser from './admin/Adminuser'
 import Adminadd from './admin/Adminadd'
-import Adminupdate from './admin/adminupdate'
+import Adminupdate from './admin/Adminupdate'
 import NotFound from './component/Notfound'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";

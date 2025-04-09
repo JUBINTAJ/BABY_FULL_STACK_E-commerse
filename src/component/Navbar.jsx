@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faHeart, faBars, faTimes, faUser } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axios/intersptr";
 import { toast } from "react-toastify";
 import WishlistModal from "../pages/Wishlist";
@@ -13,6 +13,7 @@ function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const queryClient = useQueryClient();
 
   const userId = localStorage.getItem("_id");
   const userName = localStorage.getItem("username");
@@ -35,28 +36,27 @@ function Navbar() {
   });
   
 
-  const { data: CartData, isLoading: isCartLoading } = useQuery({
+
+
+  const { data: CartData } = useQuery({
     queryKey: ["Cart"],
     queryFn: async () => {
       const res = await axiosInstance.get("cart/getCart");
       return res.data.cart?.products || [];
     },
+    onSuccess:()=>{
+  queryClient.invalidateQueries({queryKey:["Cart"]})
+
+}
   });
+
+
 
   const cartLength = CartData ? CartData.length : 0;
 
   const handleLogout = () => {
     logoutMutation.mutate();
   };
-  const { data: wishlistData, isLoading, isError } = useQuery({
-    queryKey: ["Wishlist"],
-    queryFn: async () => {
-      const res = await axiosInstance.get("wishlist/getWishlist");
-      return res.data?.message || [];
-    },
-  });
-
-  const wishLength = wishlistData ? wishlistData.length : 0;
 
 
   return (

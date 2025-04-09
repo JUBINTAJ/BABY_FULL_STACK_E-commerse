@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import Adminnavbar from './Adminnavbar';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axiosInstance from '../axios/intersptr';
 import { toast } from 'react-toastify';
+import Adminnavbar from './Adminnavbar';
 import AdminAddModal from './Adminadd';
-import AdminUpdateModal from './adminupdate';
+import AdminUpdateModal from './Adminupdate';
 
 function Adminproduct() {
   const queryClient = useQueryClient();

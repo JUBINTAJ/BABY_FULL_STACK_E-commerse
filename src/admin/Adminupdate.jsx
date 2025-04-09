@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import axiosInstance from '../axios/intersptr';
 import { toast } from 'react-toastify';
+import axiosInstance from '../axios/intersptr';
 
 function AdminUpdateModal({ open, onClose, item  }) {
    const queryClient = useQueryClient();

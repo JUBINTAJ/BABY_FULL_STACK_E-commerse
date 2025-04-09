@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import axiosInstance from '../axios/intersptr';
 import { toast } from 'react-toastify';
+import axiosInstance from '../axios/intersptr';
 
 function AdminAddModal({ open, onClose }) {
   const [product, setProduct] = useState({

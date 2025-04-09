@@ -1,9 +1,9 @@
 import { useMutation } from '@tanstack/react-query';
 import React from 'react'
-import axiosInstance from '../axios/intersptr';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import { BarChart3, Home, LogOut, Package, ShoppingCart, Users } from 'lucide-react';
+import axiosInstance from '../axios/intersptr';
 
 function Adminnavbar() {
     const navigate=useNavigate()

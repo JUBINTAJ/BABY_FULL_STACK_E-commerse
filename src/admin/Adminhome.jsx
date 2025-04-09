@@ -1,12 +1,10 @@
 import React from 'react';
 import { Users, ShoppingCart, DollarSign, Package } from 'lucide-react';
-import Adminnavbar from './Adminnavbar';
-import axiosInstance from '../axios/intersptr';
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
-import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-} from 'recharts';
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,} from 'recharts';
+import Adminnavbar from './Adminnavbar';
+import axiosInstance from '../axios/intersptr';
 
 function App() {
   const { data: userCount = 0, isLoading: isUserCountLoading } = useQuery({

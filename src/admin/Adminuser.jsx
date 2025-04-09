@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import axiosInstance from "../axios/intersptr";
-import Adminnavbar from "./Adminnavbar";
 import { toast } from "react-toastify";
+import Adminnavbar from "./Adminnavbar";
+import axiosInstance from "../axios/intersptr";
 
 function Adminuser() {
   // const [allUsers, setAllUsers] = useState([]);
@@ -47,7 +47,7 @@ function Adminuser() {
   };
 
   const totalUsers = allUsers.length;
-  const blockedUsers = allUsers.filter((user) => user.block).length;
+  const blockedUsers = allUsers.filter((user) => user.isBlocked).length;
 
   return (
     <div className="flex h-screen bg-gray-900">
@@ -95,7 +95,7 @@ function Adminuser() {
                       <td className="py-4 px-6">
                         <span
                           className={`px-3 py-1 text-sm font-bold rounded-lg ${
-                            user.block ? "bg-red-500 text-white" : "bg-green-500 text-white"
+                            user.isBlocked ? "bg-red-500 text-white" : "bg-green-500 text-white"
                           }`}
                         >
                           {user.isBlocked ? "Blocked" : "Active"}

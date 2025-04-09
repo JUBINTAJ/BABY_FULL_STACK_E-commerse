@@ -1,15 +1,15 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import axiosInstance from '../axios/intersptr';
 import Adminnavbar from './Adminnavbar';
+import axiosInstance from '../axios/intersptr';
 
 function AdminOrder() {
   const { data: orders, isLoading, isError, refetch } = useQuery({
     queryKey: ['adminOrders'],
     queryFn: async () => {
       const res = await axiosInstance.get('admin/orders');
-    //   console.log(res.data)
-      return res.data;
+      console.log(res.data)
+      return res.data.order;
     },
   });
 
@@ -44,9 +44,10 @@ function AdminOrder() {
             {orders.map((order) => (
               <div key={order._id} className="bg-white text-black border p-6 rounded-xl shadow-md">
                 <h2 className="font-semibold mb-2">Order ID: {order._id}</h2>
-                <p><strong>User:</strong> {order.userId}</p>
+                <p><strong>User:</strong> {order.username}</p>
                 <p><strong>Total:</strong> ${order.total}</p>
                 <p><strong>Status:</strong> {order.status}</p>
+                <p><strong>paymentMethod:</strong> {order.paymentMethod}</p>
                 <p><strong>Date:</strong> {new Date(order.createdAt).toLocaleDateString()}</p>
 
                 {order.products && order.products.length > 0 && (

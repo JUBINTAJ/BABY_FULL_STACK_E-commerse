@@ -11,19 +11,18 @@ const Registration = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const nav=useNavigate()
+  const nav = useNavigate();
+
   const mutation = useMutation({
     mutationFn: async (userData) => {
       const res = await axiosInstance.post("user/signup", userData);
       return res.data;
     },
     onSuccess: (data) => {
-      console.log("User registered successfully:", data);
-      toast.success(" Registration Successful!");
+      toast.success("Registration Successful!");
       setTimeout(() => {
-        nav('/Login')
+        nav("/Login");
       }, 2000);
-
     },
     onError: (error) => {
       const { message = "Registration failed. Please try again" } = error?.response?.data;
@@ -35,11 +34,11 @@ const Registration = () => {
     e.preventDefault();
 
     if (!username || !email || !password || !confirmPassword) {
-      toast.warn(" Please fill out all fields.");
+      toast.warn("Please fill out all fields.");
       return;
     }
     if (password !== confirmPassword) {
-      toast.error(" Passwords do not match.");
+      toast.error("Passwords do not match.");
       return;
     }
 
@@ -47,61 +46,63 @@ const Registration = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6">
-      <div className="flex flex-col lg:flex-row items-center max-w-6xl mx-auto bg-white shadow-2xl rounded-lg p-6 lg:p-12">
-        <form
-          className="flex flex-col rounded-xl items-center sm:max-w-96 m-auto mt-14 gap-4 text-gray-600"
-          onSubmit={handleSubmit}
-        >
-          <div className="inline-flex items-center gap-2 mb-2 mt-10">
-            <p className="text-3xl">REGISTER</p>
-          </div>
+    <div
+      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/1000_F_573586686_lvkwRqIMEXbjVUDNVqWgcivx3n4sqz3c.jpg')",
+      }}
+    >
+      <div className="bg-transparent backdrop-blur-md p-10 rounded-3xl shadow-2xl max-w-md w-full border-2 border-green-800">
+        <div className="flex flex-col items-center mb-6">
+          <span className="text-5xl">🌱</span>
+          <h2 className="text-center text-4xl font-bold text-green-800 mt-4">Create Your Account</h2>
+          <p className="text-center text-gray-600 mt-2">Join BabyShop & start shopping today!</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="text"
-            id="name"
             value={username}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-800 rounded-xl"
-            placeholder="Enter your name"
+            placeholder="Your Name"
+            className="w-full px-4 py-3 rounded-xl bg-green-50 border border-green-800 focus:outline-none focus:ring-2 focus:ring-green-700"
             required
           />
           <input
             type="email"
-            id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-800 rounded-xl"
-            placeholder="Enter your email"
+            placeholder="Your Email"
+            className="w-full px-4 py-3 rounded-xl bg-green-50 border border-green-800 focus:outline-none focus:ring-2 focus:ring-green-700"
             required
           />
           <input
             type="password"
-            id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-800 rounded-xl"
-            placeholder="Enter your password"
+            placeholder="Password"
+            className="w-full px-4 py-3 rounded-xl bg-green-50 border border-green-800 focus:outline-none focus:ring-2 focus:ring-green-700"
             required
           />
           <input
             type="password"
-            id="confirmPassword"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-800 rounded-xl"
-            placeholder="Confirm password"
+            placeholder="Confirm Password"
+            className="w-full px-4 py-3 rounded-xl bg-green-50 border border-green-800 focus:outline-none focus:ring-2 focus:ring-green-700"
             required
           />
           <button
-            className="bg-blue-600 text-white py-2 px-4 rounded-xl"
             type="submit"
             disabled={mutation.isLoading}
+            className="bg-green-800 hover:bg-green-900 transition-colors text-white font-semibold py-3 rounded-xl"
           >
-            {mutation.isLoading ? "Submitting..." : "Submit"}
+            {mutation.isLoading ? "Registering..." : "Register"}
           </button>
+          <button onClick={()=>nav('/Login')} className="text-white">Login</button>
+          
         </form>
       </div>
-
       <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
