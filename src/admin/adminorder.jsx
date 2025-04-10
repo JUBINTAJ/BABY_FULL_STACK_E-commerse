@@ -38,36 +38,38 @@ function AdminOrder() {
         >
           Refresh Orders
         </button>
-
         {orders && orders.length > 0 ? (
-          <div className="space-y-6">
-            {orders.map((order) => (
-              <div key={order._id} className="bg-white text-black border p-6 rounded-xl shadow-md">
-                <h2 className="font-semibold mb-2">Order ID: {order._id}</h2>
-                <p><strong>User:</strong> {order.username}</p>
-                <p><strong>Total:</strong> ${order.total}</p>
-                <p><strong>Status:</strong> {order.status}</p>
-                <p><strong>paymentMethod:</strong> {order.paymentMethod}</p>
-                <p><strong>Date:</strong> {new Date(order.createdAt).toLocaleDateString()}</p>
+  <div className="space-y-6">
+    {[...orders].reverse().map((order) => (
+      <div key={order._id} className="bg-white text-black border p-6 rounded-xl shadow-md">
+        <h2 className="font-semibold mb-2">Order ID: {order._id}</h2>
+        <p><strong>User:</strong> {order.name}</p>
+        {/* <p><strong>address:</strong> {order.address.city}</p> */}
+        <p><strong>Total:</strong> ₹{order.total}</p>
+        <p><strong>Status:</strong> {order.status}</p>
+        <p><strong>Payment Method:</strong> {order.paymentMethod}</p>
+        <p><strong>Payment Status:</strong> {order.razorpayPaymentStatus}</p>
+        <p><strong>Date:</strong> {new Date(order.createdAt).toLocaleDateString()}</p>
 
-                {order.products && order.products.length > 0 && (
-                  <div className="mt-3">
-                    <h3 className="font-medium mb-1">Products:</h3>
-                    <ul className="list-disc ml-6">
-                      {order.products.map((prod, index) => (
-                        <li key={index}>
-                          {prod.productId} - Qty: {prod.quantity}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ))}
+        {order.products && order.products.length > 0 && (
+          <div className="mt-3">
+            <h3 className="font-medium mb-1">Products:</h3>
+            <ul className="list-disc ml-6">
+              {order.products.map((prod, index) => (
+                <li key={index}>
+                  {prod.productId} - Qty: {prod.quantity}
+                </li>
+              ))}
+            </ul>
           </div>
-        ) : (
-          <div>No orders found.</div>
         )}
+      </div>
+    ))}
+  </div>
+) : (
+  <div>No orders found.</div>
+)}
+
       </div>
     </div>
   );

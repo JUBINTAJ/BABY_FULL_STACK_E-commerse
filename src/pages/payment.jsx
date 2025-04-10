@@ -16,27 +16,26 @@ const UserPaymentAddress = () => {
   const verifypayment = useMutation({
     mutationFn: async (paymentData) => {
       const res = await axiosInstance.post("order/verifypayment", paymentData);
-      console.log(res.data,'okkii');
       return res.data;
     },
     onSuccess: () => {
       setIsModalOpen(true);
       toast.success(`You Paid ₹${grandTotal} Successfully`);
+      navigate("/");
     },
     onError: () => {
       toast.error("Payment verification failed. Try again.");
     },
   });
-  
+
   const addOrder = useMutation({
     mutationFn: async (orderData) => {
       const res = await axiosInstance.post("order/addorder", orderData);
-      console.log(res.data,'lloii');
       return res.data;
     },
     onSuccess: (data, variables) => {
-      const { razorpayOrderId, amount } = data;
-      openRazorpayPayment(razorpayOrderId, amount, variables.name);
+      const { razorpayOrderId, amount, _id: orderId } = data;
+      openRazorpayPayment(razorpayOrderId, amount, variables.name, orderId);
     },
     onError: () => {
       toast.error("Failed to place order");
@@ -53,7 +52,7 @@ const UserPaymentAddress = () => {
     };
   }, []);
 
-  const openRazorpayPayment = (razorpayOrderId, amount, name) => {
+  const openRazorpayPayment = (razorpayOrderId, amount, name, orderId) => {
     const options = {
       key: "rzp_test_wL1B6IUAUSnQqu",
       amount: amount * 100,
@@ -63,9 +62,8 @@ const UserPaymentAddress = () => {
       order_id: razorpayOrderId,
       handler: (response) => {
         const paymentData = {
-          razorpay_payment_id: response.razorpay_payment_id,
-          razorpay_order_id: response.razorpay_order_id,
-          razorpay_signature: response.razorpay_signature,
+          paymentId: response.razorpay_payment_id,
+          orderId: razorpayOrderId,
         };
         verifypayment.mutate(paymentData);
       },
@@ -85,16 +83,28 @@ const UserPaymentAddress = () => {
     initialValues: {
       name: "",
       email: "",
-      address: "",
       phone: "",
       cardno: "",
+      address: {
+        country: "",
+        state: "",
+        city: "",
+        street: "",
+        pincode: "",
+      },
     },
     validationSchema: Yup.object({
       name: Yup.string().max(50).required(),
       email: Yup.string().email().required(),
-      address: Yup.string().required(),
       phone: Yup.string().matches(/^[0-9]+$/).min(10).max(10).required(),
       cardno: Yup.string().matches(/^[0-9]+$/).min(16).max(16).required(),
+      address: Yup.object({
+        country: Yup.string().required("Country is required"),
+        state: Yup.string().required("State is required"),
+        city: Yup.string().required("City is required"),
+        street: Yup.string().required("Street is required"),
+        pincode: Yup.string().matches(/^[0-9]+$/).min(6).max(6).required("Pincode is required"),
+      }),
     }),
     onSubmit: async (values) => {
       const orderData = {
@@ -122,7 +132,7 @@ const UserPaymentAddress = () => {
       >
         <h2 className="text-2xl font-bold mb-6 text-blue-700">Payment Address</h2>
 
-        {["name", "email", "address", "phone", "cardno"].map((field, idx) => (
+        {["name", "email", "phone", "cardno"].map((field, idx) => (
           <div className="mb-4" key={idx}>
             <label className="block text-blue-700 mb-2" htmlFor={field}>
               {field.charAt(0).toUpperCase() + field.slice(1)}
@@ -142,6 +152,32 @@ const UserPaymentAddress = () => {
             />
             {formik.touched[field] && formik.errors[field] && (
               <div className="text-red-500 text-sm mt-1">{formik.errors[field]}</div>
+            )}
+          </div>
+        ))}
+
+        <h3 className="text-xl font-semibold text-blue-700 mt-6 mb-2">Address</h3>
+
+        {["country", "state", "city", "street", "pincode"].map((field) => (
+          <div className="mb-4" key={field}>
+            <label className="block text-blue-700 mb-2" htmlFor={`address.${field}`}>
+              {field.charAt(0).toUpperCase() + field.slice(1)}
+            </label>
+            <input
+              id={`address.${field}`}
+              name={`address.${field}`}
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.address[field]}
+              className={`w-full p-2 border rounded ${
+                formik.touched.address?.[field] && formik.errors.address?.[field]
+                  ? "border-red-500"
+                  : "border-blue-300"
+              }`}
+            />
+            {formik.touched.address?.[field] && formik.errors.address?.[field] && (
+              <div className="text-red-500 text-sm mt-1">{formik.errors.address[field]}</div>
             )}
           </div>
         ))}
