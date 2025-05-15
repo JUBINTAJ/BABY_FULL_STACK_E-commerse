@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Title from "../component/title";
+import Title from "../component/Title";
 import Nav from "../component/Nav";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../axios/intersptr";

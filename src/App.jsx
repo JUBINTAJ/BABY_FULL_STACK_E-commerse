@@ -20,7 +20,8 @@ import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import Wishlist from './pages/Wishlist'
 import AdminOrder from './admin/adminorder'
-import Home from './pages/Home';
+import Home from './pages/home'
+
 
 function App() {
   const role=import.meta.env.VITE_roleProtectKey
