@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Shopcontext } from '../context/ShopContext';
+import React, { useEffect, useState} from 'react';
+
 
 const Searchbar = () => {
-  // const { search, setSearch, showSearch } = useContext(Shopcontext);
 
 
   return (
