@@ -3,7 +3,7 @@ import Homepage from '../component/Homepage'
 import { Footer } from '../component/Footer'
 
 function Home() {
-    
+    console.log('object');
   return (
     <>
   
@@ -11,6 +11,7 @@ function Home() {
 
 <Homepage/>
 <Footer/>
+
 
 
 
