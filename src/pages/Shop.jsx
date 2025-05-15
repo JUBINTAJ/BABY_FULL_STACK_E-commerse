@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Title from "../component/title";
+import Title from "../component/Title";
 import Searchbar from "../component/Searchbar";
 import Nav from "../component/Nav";
 import { useQuery } from "@tanstack/react-query";
