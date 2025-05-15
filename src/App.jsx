@@ -20,7 +20,7 @@ import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import Wishlist from './pages/Wishlist'
 import AdminOrder from './admin/adminorder'
-import Home from './pages/home'
+import Home from './pages/Home'
 
 
 function App() {
